@@ -1,0 +1,30 @@
+.photo-card {
+  @apply bg-card border-none shadow-md;
+  background-image: linear-gradient(to bottom right, #fff5e6, #fff);
+}
+
+.photo-book {
+  @apply bg-card border-none shadow-lg;
+  background-image: linear-gradient(to bottom right, #fff5e6, #fff);
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: rgba(0, 0, 0, 0.1);
+    transform: translateX(-50%);
+  }
+
+  img {
+    @apply transition-transform duration-300;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
+} 

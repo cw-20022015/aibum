@@ -1,13 +1,20 @@
-import React from "react";
+import "@/styles/globals.css"
+import { Toaster } from "@/components/ui/toaster"
+import { Inter } from 'next/font/google'
 
-export default function Layout({
+const inter = Inter({ subsets: ['latin'] })
+
+export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: {
+  children: React.ReactNode
+}) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="en" className={inter.className}>
+      <body>
+        {children}
+        <Toaster />
+      </body>
     </html>
-  );
+  )
 }
